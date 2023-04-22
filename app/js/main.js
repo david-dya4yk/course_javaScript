@@ -60,7 +60,6 @@ const start = () => {
   if (action === "/") {
     result = divisionNumbers(firstNumber, secondNumber);
   }
-
   console.log(result);
 };
 
