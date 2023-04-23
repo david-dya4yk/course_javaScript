@@ -1,86 +1,29 @@
-"use strict";
+const title = 'javaScript';
+const screens = 'Простые, Сложные, Интерактивные';
+const screenPrice = 42;
+const rollBack = 55;
+const fullPrice = 1000;
+const adaptive = true;
 
-// const firstName = 'david';
-// const lastName = 'Dyachuk';
-// const age = 20;
-// const email = 'daviddya4yk@gmail.com';
-// const country = 'Ukraine';
-// const city = 'Chernivtsi';
+const splits = screens.split(',');
+const workerPrice = fullPrice * rollBack / 100;
 
-//зробити кальклятор
-//1 зробити 4 функції: додавання, ділення, множення, віднімання
-//2 дабавити функціям 2 аргумента для роботи
-//3 всердтні кожної функції зробити перевірку на
-// те чи передані якісь аргкменти. якщо пругментів не має
-//то видати alert - данні не передані
 
-//exercise 1
+console.log(title);
+console.log(fullPrice);
+console.log(adaptive);
+console.log(screens.length);
+console.log(fullPrice + 'UAH');
+console.log(screenPrice + 'UAH');
+console.log(screens.toLowerCase());
+console.log(splits);
+console.log(workerPrice)
 
-const addNumbers = (a, b) => {
-  return +a + +b
-}
 
-const subtractNumbers = (a, b) => {
-  return a - b;
-};
+let num = 266219;
+const numToString = Array.from(String(num)).map(i=>Number(i));
+const multiplyNum = numToString.reduce((acc, rec) => acc * rec);
+const degreeMultiplyNum = multiplyNum ** 3;
+const sliceDegreeMultiplyNum = String(num).slice(0,2);
+console.log(sliceDegreeMultiplyNum)
 
-const multiplyNumbers = (a, b) => {
-  return a * b;
-};
-
-const divisionNumbers = (a, b) => {
-  return a / b
-};
-
-const start = () => {
-  const firstNumber = prompt("Введіть перше число");
-  if (firstNumber <= 0) {
-    alert("Данні не коректні")
-    return;
-  }
-
-  const secondNumber = prompt("Введіть друге число");
-  if (secondNumber <= 0) {
-    alert("Данні не коректні");
-    return;
-  }
-
-  const action = prompt("Введіть знак щоб вичіслети рівняння - + * /");
-  let result;
-  if (action === "-") {
-    result = subtractNumbers(firstNumber, secondNumber);
-  }
-
-  if (action === "+") {
-    result = addNumbers(firstNumber, secondNumbe);
-  }
-  if (action === "*") {
-    result = multiplyNumbers(firstNumber, secondNumber);
-  }
-  if (action === "/") {
-    result = divisionNumbers(firstNumber, secondNumber);
-  }
-
-  console.log(result);
-};
-
-start()
-
-// console.log(addNumbers);
-// console.log(multiplicationNumbers);
-// console.log(divisionNumbers);
-
-// const num = 20;
-// const question = prompt('Відгадайте задане число');
-
-//     if (question = 20){
-//         alert('Вітаємоб ви відгадали')
-//     } else {
-//         alert('Вітаємоб ви відгадfsdfsdfали')
-//     }
-
-// function calculateAge(year){
-//     return 2022 - year
-// }
-
-// console.log(calculateAge(2002))
