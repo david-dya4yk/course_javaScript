@@ -44,9 +44,9 @@
 // const a = 10;
 // console.log(a)
 
-const lang = prompt("Выберите язык", "ru & en");
-const weekDaysRu = ["Понедельник", " Вторник", "Среда", "Четверг", "П'ятница"];
-const weekDaysEn = ["Monday", "Tuesday", "Wednesday", "Thusday", "Friday"];
+// const lang = prompt("Выберите язык", "ru & en");
+// const weekDaysRu = ["Понедельник", " Вторник", "Среда", "Четверг", "П'ятница"];
+// const weekDaysEn = ["Monday", "Tuesday", "Wednesday", "Thusday", "Friday"];
 
 // if (lang == 'ru') {
 //   console.log(weekDaysRu);
@@ -54,11 +54,14 @@ const weekDaysEn = ["Monday", "Tuesday", "Wednesday", "Thusday", "Friday"];
 //   console.log(weekDaysEn)
 // }
 
-switch (lang) {
-  case "ru":
-    console.log(weekDaysRu);
-    break
-  case "en":
-    console.log(weekDaysEn);
-    break
-}
+// switch (lang) {
+//   case "ru":
+//     console.log(weekDaysRu);
+//     break
+//   case "en":
+//     console.log(weekDaysEn);
+//     break
+// }
+
+const namePerson = 'Александр';
+console.log(namePerson === 'Артем' ? 'директор' : namePerson === 'Александр' ? 'преподаватель' : 'студент')
