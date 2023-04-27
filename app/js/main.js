@@ -1,67 +1,51 @@
 "use strict";
-// const title = prompt('как называется ваш проект?');
-// const screens = prompt('Какие типы экранов нужно разработать?','Простые, Сложные, Интерактивные');
-// const screenPrice = prompt("Сколько будет стоить данная работа?", "1200");
-// const rollBack = 55;
-// const adaptive = confirm('Нужен ли адаптив на сайте?');
-// const service1 = prompt('Какой дополнительный тип услуги нужен?');
-// const servicePrice1 = prompt("Сколько это будет стоить?");
-// const service2 = prompt('Какой дополнительный тип услуги нужен?');
-// const servicePrice2 = prompt("Сколько это будет стоить?");
 
-// const splits = screens.split(',');
-// const fullPrice = +screenPrice + +servicePrice1 + +servicePrice2;
-//   if (fullPrice >= 30000) {
-//     alert("Даем скидку в 10%");
-//   } else if (fullPrice >= 15000) {
-//     alert("Даем скидку в 5%");
-//   } else if (fullPrice > 0) {
-//     alert('Скидка не предусмотрена')
-//   } else if (fullPrice <= 0) {
-//     alert("Что то пошло не так");
-//   }
+const title = prompt('Как называется ваш проект?');
+const screens = prompt('Какие типы екранов нужно розрабативать?');
+const screenPrice = +prompt('Сколько будет стоить даная работа?');
+const adaptive = confirm('Нужен адаптив на сайте?');
+const service1 = prompt('Какой дополнительный тип услуги нужен?');
+const servicePrice1 = +prompt('Сколько это будет стоить?');
+const service2 = prompt('Какой дополнительный тип услуги нужен?');
+const servicePrice2 = +prompt('Сколько это будет стоить?');
+const rollBack = 10;
+const fullPrice = screenPrice + servicePrice1 + servicePrice2;
 
-// const workerPrice = (fullPrice * rollBack) / 100;
-// const servicePercentPrice = Math.round(fullPrice - workerPrice);
 
-// console.log('title',title);
-// console.log('fullPrice',fullPrice);
-// console.log('adaptive',adaptive);
-// console.log('screens',screens.length);
-// console.log('fullPrice', fullPrice + 'UAH');
-// console.log('screenPrice', screenPrice + 'UAH');
-// console.log('screens',screens.toLowerCase());
-// console.log('splits', splits);
-// console.log('workerPrice', workerPrice)
-// console.log('servicePercentPrice', servicePercentPrice);
+const showTypeOf = function(variable) {
+    console.log(variable, typeof variable);
+}
 
-// let num = 266219;
-// const numToString = Array.from(String(num)).map((i) => Number(i));
-// const multiplyNum = numToString.reduce((acc, rec) => acc * rec);
-// const degreeMultiplyNum = multiplyNum ** 3;
-// const sliceDegreeMultiplyNum = String(num).slice(0, 2);
+const getRollbackMessage = function (price) {
+    if (price >= 30000) {
+        return "Даем скидку в 10%"
+    } else if (price >= 15000 && price < 30000){
+        return "Даем скидку в 5%"
+    } else if (price >= 0 && price < 15000){
+        return "Скидка не предусмотрена"
+    } else {
+        return "Что то пошло не так"
+    }
+}
 
-// const a = 10;
-// console.log(a)
+const getServicePercentPrices = function () {
+    return fullPrice - (fullPrice * (rollBack / 100));
+  };
 
-// const lang = prompt("Выберите язык", "ru & en");
-// const weekDaysRu = ["Понедельник", " Вторник", "Среда", "Четверг", "П'ятница"];
-// const weekDaysEn = ["Monday", "Tuesday", "Wednesday", "Thusday", "Friday"];
+const servicePercentPrice = getServicePercentPrices();
 
-// if (lang == 'ru') {
-//   console.log(weekDaysRu);
-// } else if (lang == 'en'){
-//   console.log(weekDaysEn)
-// }
+showTypeOf(title);
+showTypeOf(screenPrice);
+showTypeOf(adaptive);
 
-// switch (lang) {
-//   case "ru":
-//     console.log(weekDaysRu);
-//     break
-//   case "en":
-//     console.log(weekDaysEn);
-//     break
-// }
+console.log(getRollbackMessage(fullPrice));
+console.log(typeof title);
+console.log(typeof screenPrice);
+console.log(typeof adaptive);
 
-const namePerson = 'Александр';
-console.log(namePerson === 'Артем' ? 'директор' : namePerson === 'Александр' ? 'преподаватель' : 'студент')
+console.log(screens.length);
+console.log(servicePercentPrice);
+
+console.log("Стоимость верстки экранов" + " " + screenPrice + "рублей");
+
+console.log(servicePercentPrice)
