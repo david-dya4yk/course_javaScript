@@ -11,11 +11,21 @@ const appData = {
   servicesPercentPrice: 0,
   services: {},
   servicePrice: 0,
-  asking: function () {
-    appData.title = prompt("Как называется ваш проект?", "Калькулятор верстки");
+  askForTitle: function () {
+    const title = prompt("Как называется ваш проект?", "Калькулятор верстки")
 
-    for (let i = 0; i < 2; i++) {
-      let name = prompt("Какие типы екранов нужно розрабативать?");
+    if(appData.isNumber(+title)){
+      return appData.askForTitle()
+    }
+    return title
+  },
+
+
+  asking: function () {
+    appData.title = appData.askForTitle()
+  
+    for (let i = 0; i < 1; i++) {
+      let name = prompt("Какие типы екранов нужно розрабативать?", "Простые");
       let price = 0;
 
       do {
@@ -28,10 +38,8 @@ const appData = {
       appData.screens.push({ id: i, name: name, price: price });
     }
 
-
-
     for (let i = 0; i < 2; i++) {
-      let name = prompt("Какой дополнительный тип услуги нужен?");
+      let name = prompt("Какой дополнительный тип услуги нужен?", "адаптив");
       let price = 0;
 
       do {
@@ -65,6 +73,10 @@ const appData = {
 
   isNumber: function (num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
+  },
+
+  isString: function (str) {
+    return Object.prototype.toString.call(str) === "string"
   },
 
   getFullPrice: function () {
