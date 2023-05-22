@@ -50,10 +50,9 @@ const appData = {
       const screen = appData.screens.find(checkName)
 
       if (screen){
-        appData.screens.push({ id: i, name: name + i, price: price });
-      } else {
+        name = name + i
+      } 
         appData.screens.push({ id: i, name: name, price: price });
-      }
     }
     appData.adaptive = confirm("Нужен адаптив на сайте?");
   },
@@ -62,9 +61,6 @@ const appData = {
     appData.screenPrice = appData.screens.reduce((p, c) => {
       return p + +c.price
     }, 0);
-    // for (let screen of appData.screens) {
-    //   appData.screenPrice += +screen.price;
-    // }
 
     for (let key in appData.services) {
       appData.allServicesPrices += appData.services[key];
