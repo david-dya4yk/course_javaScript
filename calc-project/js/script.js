@@ -1,8 +1,10 @@
 const title = document.getElementsByTagName('h1')[0];
 
-const buttonCalculate = document.getElementsByClassName('handler_btn')[0];
+const buttonsCollection = document.getElementsByClassName('handler_btn')
 
-const buttonReset = document.getElementsByClassName('handler_btn')[1];
+const buttonCalculate = buttonsCollection[0];
+
+const buttonReset = buttonsCollection[1];
 
 const buttonAdd = document.querySelector('.screen-btn') ;
 
@@ -10,11 +12,11 @@ const otherItemsPercent = [...document.querySelectorAll('.other-items.percent')]
 
 const otherItemsNumber = [...document.querySelectorAll('.other-items.number')];
 
-const inputTypeRange = document.querySelector("div.rollback > div > input");
+const inputTypeRange = document.querySelector(".rollback  input");
 
-const spanRangeValue = document.querySelector("div.rollback > div > span.range-value");
+const spanRangeValue = document.querySelector(".rollback .range-value");
 
-const inputAll = [...document.getElementsByClassName('total-input')];
+const allInputs = [...document.getElementsByClassName('total-input')];
 
 let screen = document.querySelectorAll('.screen')[0]
 
@@ -26,5 +28,5 @@ console.log(otherItemsPercent)
 console.log(otherItemsNumber)
 console.log(inputTypeRange)
 console.log(spanRangeValue)
-console.log(inputAll)
+console.log(allInputs)
 console.log(screen)
