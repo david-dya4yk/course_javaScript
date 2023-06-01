@@ -24,4 +24,9 @@ fixOrderBook5[8].before(fixOrderBook5[5]);
 fixOrderBook6[0].innerHTML = "<li>Глава 8: За пределами ES6</li>"
 fixOrderBook6[9].before(fixOrderBook6[0])
 
-console.log(fixOrderBook6)
+
+
+
+
+
+
